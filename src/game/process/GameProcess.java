@@ -77,11 +77,14 @@ public class GameProcess {
   }
 
   public void repaint(Graphics g) {
-    this.snake.get(0).draw(g);
-    this.apple.draw(g);
     for (SnakePart part : this.snake) {
       part.draw(g);
     }
+    this.apple.draw(g);
+    this.snake.get(0).drawHead(g);
+
+    g.setColor(Color.white);
+    g.drawString("Score: " + this.snake.size(), 0, g.getFont().getSize());
   }
 
   private int getRandom(int min, int max) {
