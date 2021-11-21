@@ -21,7 +21,7 @@ public class SnakePart extends GameObject {
 
   @Override
   public void draw(Graphics g) {
-    g.setColor(Color.green);
+    g.setColor(Color.blue);
     g.fillRect(
       this.x*Panel.BLOCK_SIZE+2,
       this.y*Panel.BLOCK_SIZE+2,

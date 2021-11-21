@@ -13,4 +13,3 @@ public class Frame extends JFrame {
     this.pack();
   }
 }
-
