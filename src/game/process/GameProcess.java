@@ -3,6 +3,7 @@ package game.process;
 import java.awt.*;
 import java.util.Random;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import game.window.Panel;
 import game.window.Keyboard;
@@ -44,9 +45,14 @@ public class GameProcess {
     int newX = tail.getX();
     int newY = tail.getY();
 
-    for (int i = this.snake.size() - 1; i >= 1; i--) {
-      SnakePart current = this.snake.get(i);
-      SnakePart next = this.snake.get(i-1);
+    ListIterator<SnakePart> listIterator = this.snake.listIterator(this.snake.size());
+    while(listIterator.hasPrevious()) {
+      SnakePart current = listIterator.previous();
+
+      // skip snake's head
+      if (!listIterator.hasPrevious()) break;
+
+      SnakePart next = this.snake.get(listIterator.previousIndex());
 
       if (current.getX() == head.getX() && current.getY() == head.getY()) {
         this.gamePanel.setRunning(false);
