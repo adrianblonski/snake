@@ -9,8 +9,7 @@ public class SnakePart extends GameObject {
     super(x, y);
   }
 
-  public void drawHead(Graphics g) {
-    g.setColor(Color.gray);
+  private void fill(Graphics g) {
     g.fillRect(
       this.x*Panel.BLOCK_SIZE+2,
       this.y*Panel.BLOCK_SIZE+2,
@@ -19,14 +18,14 @@ public class SnakePart extends GameObject {
     );
   }
 
+  public void drawHead(Graphics g) {
+    g.setColor(Color.gray);
+    fill(g);
+  }
+
   @Override
   public void draw(Graphics g) {
     g.setColor(Color.blue);
-    g.fillRect(
-      this.x*Panel.BLOCK_SIZE+2,
-      this.y*Panel.BLOCK_SIZE+2,
-      Panel.BLOCK_SIZE-4,
-      Panel.BLOCK_SIZE-4
-    );
+    fill(g);
   }
 }
