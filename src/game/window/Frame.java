@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 public class Frame extends JFrame {
   public Frame(String title) {
+    super();
     this.add(new Panel());
     this.setTitle(title);
     this.setVisible(true);

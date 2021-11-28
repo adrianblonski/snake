@@ -18,6 +18,7 @@ public class Panel extends JPanel implements ActionListener {
   private GameProcess process;
 
   public Panel() {
+    super();
     this.running = true;
     this.keyboard = new Keyboard();
     this.timer = new Timer(75, this);

@@ -7,6 +7,7 @@ public class Keyboard extends KeyAdapter {
   private char dir;
 
   public Keyboard() {
+    super();
     this.dir = 'r';
     this.newDir = this.dir;
   }
